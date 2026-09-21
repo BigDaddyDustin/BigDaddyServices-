@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dustin Woodward's Big Daddy Services — Jack of all trades, master of none. Reliable handyman and property services.">
+  <title>Big Daddy Services | Dustin Woodward</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <div class="brand">BIG DADDY <span>SERVICES</span></div>
+      <a class="nav-btn" href="#contact">Get a Quote</a>
+    </nav>
+    <div class="hero-content">
+      <p class="eyebrow">DUSTIN WOODWARD'S</p>
+      <h1>Jack of all trades.<br><span>Master of none.</span></h1>
+      <p class="lead">Reliable help for the jobs around your home or property that you don't want to tackle yourself.</p>
+      <div class="buttons">
+        <a class="button primary" href="#contact">Request a Quote</a>
+        <a class="button secondary" href="#services">See Services</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="services" class="section">
+      <p class="eyebrow">WHAT WE DO</p>
+      <h2>Big jobs. Small jobs. Odd jobs.</h2>
+      <p class="section-intro">From repairs and maintenance to cleanup and general property work, Big Daddy Services is here to get it handled.</p>
+      <div class="cards">
+        <article class="card"><div class="icon">🔨</div><h3>General Handyman</h3><p>Repairs, assembly, installation, adjustments, and those miscellaneous jobs on your list.</p></article>
+        <article class="card"><div class="icon">🏠</div><h3>Home & Property</h3><p>Maintenance and improvement work to help keep your home, rental, or property looking right.</p></article>
+        <article class="card"><div class="icon">🧹</div><h3>Cleanup & Hauling</h3><p>Cleanup, junk removal, yard-related work, and helping turn a mess into a finished job.</p></article>
+        <article class="card"><div class="icon">🛠️</div><h3>Odd Jobs</h3><p>If it's a practical job that needs doing, ask. We'll tell you straight whether we can handle it.</p></article>
+      </div>
+    </section>
+
+    <section class="notice">
+      <div>
+        <p class="eyebrow">ONE IMPORTANT RULE</p>
+        <h2>We don't do plumbing or electrical work.</h2>
+        <p>Big Daddy Services sticks to the jobs we can safely and properly handle. For plumbing or electrical work, we'll tell you to call a licensed professional.</p>
+      </div>
+    </section>
+
+    <section class="section why">
+      <p class="eyebrow">WHY BIG DADDY?</p>
+      <h2>Straightforward service. No runaround.</h2>
+      <div class="features">
+        <div><strong>01</strong><h3>Honest Estimates</h3><p>Know what you're getting into before the work starts.</p></div>
+        <div><strong>02</strong><h3>Practical Solutions</h3><p>We focus on getting the actual problem handled.</p></div>
+        <div><strong>03</strong><h3>Local & Reliable</h3><p>A small business means your job matters.</p></div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div>
+        <p class="eyebrow">LET'S GET IT DONE</p>
+        <h2>Need a hand?</h2>
+        <p>Tell us what you've got going on and we'll get back to you about the job.</p>
+      </div>
+      <form onsubmit="sendMessage(event)">
+        <input id="name" type="text" placeholder="Your name" required>
+        <input id="phone" type="tel" placeholder="Phone number" required>
+        <textarea id="job" placeholder="What do you need done?" rows="5" required></textarea>
+        <button class="button primary" type="submit">Request a Quote</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>BIG DADDY SERVICES</strong><br><span>Jack of all trades, master of none.</span></div>
+    <p>© <span id="year"></span> Dustin Woodward's Big Daddy Services</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    function sendMessage(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const job = document.getElementById("job").value;
+      const subject = encodeURIComponent("Big Daddy Services Quote Request");
+      const body = encodeURIComponent(`Name: ${name}\nPhone: ${phone}\n\nJob needed:\n${job}`);
+      window.location.href = `mailto:YOUR-EMAIL-HERE@example.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
